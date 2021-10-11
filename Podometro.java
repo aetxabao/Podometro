@@ -6,24 +6,24 @@
  * @author    - Iñigo_salinas - 
  */
 public class Podometro {
-    private final string HOMBRE="H";
-    private final string MUJER="H";
-    private final double ZANCADA_HOMBRE="0.45";
-    private final double ZANCADA_MUJER="0.41"; 
-    private final int SABADO="6";
-    private final int DOMINGO="7";
+    private final String HOMBRE="M";
+    private final String MUJER="F";
+    private final double ZANCADA_HOMBRE= 0.45;
+    private final double ZANCADA_MUJER= 0.4; 
+    private final int SABADO=6;
+    private final int DOMINGO=7;
     
-    private int marca;
-    private int altura;
-    private int sexo;
-    private int longitudZancada;
-    private int totalPasosLaborales;
-    private int totalPasosSabado;
-    private int totalPasosDomingo;
-    private int totalDistanciaSemana; //km
-    private int totalDistanciaFinSemana; //km
-    private int tiempo;
-    private int caminatasNoche;  //a partir de las 21 numero de caminatas dadas.
+    private String marca;
+    private double altura;
+    private String sexo;
+    private double longitudZancada;
+    private double totalPasosLaborales;
+    private double totalPasosSabado;
+    private double totalPasosDomingo;
+    private double totalDistanciaSemana; //km
+    private double totalDistanciaFinSemana; //km
+    private double tiempo;
+    private double caminatasNoche;  //a partir de las 21 numero de caminatas dadas.
     
     
 
@@ -31,19 +31,33 @@ public class Podometro {
      * Inicializa el podómetro con la marca indicada por el parámetro.
      * El resto de atributos se ponen a 0 y el sexo, por defecto, es mujer
      */
-    public Podometro() {
-
+    public  Podometro(String queMarca) 
+    {
+        marca=queMarca;
+        altura=0;
+        sexo="F";  
+        longitudZancada=0;
+        totalPasosLaborales=0;
+        totalPasosSabado=0;
+        totalPasosDomingo=0;
+        totalDistanciaSemana=0;
+        totalDistanciaFinSemana=0;
+        tiempo=0;
+        caminatasNoche=0;
+        
+        
         
     }
+
 
     /**
      * accesor para la marca
      *  
      */
-    public      getMarca() {
-
-         
-
+    public String getMarca() 
+    {
+        return marca;
+        
     }
 
     /**
@@ -55,9 +69,10 @@ public class Podometro {
      * (leer enunciado)
      *  
      */
-    public void configurar(double queAltura, char queSexo) {
-
-        
+    public void configurar(double queAltura, char queSexo)
+    {
+        altura=queAltura;
+        altura=ZANCADA_HOMBRE*altura;
     }
 
      /**
@@ -112,11 +127,11 @@ public class Podometro {
      *  Calcula y devuelve un String que representa el nombre del día
      *  en el que se ha caminado más pasos - "SÁBADO"   "DOMINGO" o  "LABORABLES"
      */
-    public String diaMayorNumeroPasos() {
+    //public String diaMayorNumeroPasos() {
 
          
 
-    }
+    //}
     
     
     /**
