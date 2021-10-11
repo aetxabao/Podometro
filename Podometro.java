@@ -3,9 +3,28 @@
  * acerca de los pasos, distancia, ..... que una persona
  * ha dado en una semana. 
  * 
- * @author    - pon aquí tu nombre - 
+ * @author    - Iñigo_salinas - 
  */
 public class Podometro {
+    private final string HOMBRE="H";
+    private final string MUJER="H";
+    private final double ZANCADA_HOMBRE="0.45";
+    private final double ZANCADA_MUJER="0.41"; 
+    private final int SABADO="6";
+    private final int DOMINGO="7";
+    
+    private int marca;
+    private int altura;
+    private int sexo;
+    private int longitudZancada;
+    private int totalPasosLaborales;
+    private int totalPasosSabado;
+    private int totalPasosDomingo;
+    private int totalDistanciaSemana; //km
+    private int totalDistanciaFinSemana; //km
+    private int tiempo;
+    private int caminatasNoche;  //a partir de las 21 numero de caminatas dadas.
+    
     
 
     /**
