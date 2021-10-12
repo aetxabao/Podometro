@@ -3,28 +3,55 @@
  * acerca de los pasos, distancia, ..... que una persona
  * ha dado en una semana. 
  * 
- * @author    - pon aquí tu nombre - 
+ * @author    Inigo Gutierrez
  */
 public class Podometro {
-    
+    private final char HOMBRE = 'H';
+    private final char MUJER = 'M';
+    private final double  ZANCADA_HOMBRE = "0.45";
+    private final double  ZANCADA_MUJER = "0.41";
+    private final int SABADO = "6";
+    private final int DOMINGO = "7";
+    int marca;
+    int altura;
+    char sexo;
+    double longitudZancada;
+    double totalPasosLaborables;
+    double totalPasosSabado;
+    double totalPasosDomingo;
+    double totalDistanciaSemana;
+    double totalDistanciaFinSemana;
+    int tiempo;
+    int caminatasNoche;
+
 
     /**
      * Inicializa el podómetro con la marca indicada por el parámetro.
      * El resto de atributos se ponen a 0 y el sexo, por defecto, es mujer
      */
-    public Podometro() {
+    public Podometro(queMarca) 
+    {
+        marca= queMarca;
+        altura = 0;
+        longitudZancada = 0;
+        totalPasosLaborables = 0;
+        totalPasosSabado = 0;
+        totalPasosDomingo = 0;
+        totalDistanciaSemana = 0;
+        totalDistanciaFinSemana = 0;
+        tiempo = 0;
+        caminatasNoche = 0;
+        sexo = MUJER;
 
-        
     }
 
     /**
      * accesor para la marca
      *  
      */
-    public      getMarca() {
-
-         
-
+    public      getMarca() 
+    {
+        return marca;
     }
 
     /**
@@ -36,9 +63,16 @@ public class Podometro {
      * (leer enunciado)
      *  
      */
-    public void configurar(double queAltura, char queSexo) {
-
-        
+    public void configurar(double queAltura, char queSexo) 
+    {
+        sexo = queSexo;
+        altura = queAltura;
+        if(sexo = MUJER){
+            longitudZancada = Math.ceil((altura/100)*ZANCADA_MUJER);
+        }
+        if(sexo = HOMBRE){
+            longitudZancada = Math.floor((altura/100)*ZANCADA_HOMBRE);
+        }
     }
 
      /**
