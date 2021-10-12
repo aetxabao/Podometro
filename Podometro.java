@@ -1,9 +1,9 @@
 /**
- * La clase modela un sencillo podÛmetro que registra informaciÛn
+ * La clase modela un sencillo pod√≥metro que registra informaci√≥n
  * acerca de los pasos, distancia, ..... que una persona
  * ha dado en una semana. 
  * 
- * @author    Sergio  Cobos 
+ * @author    Sergio Cobos 
  */
 public class Podometro {
     private final char HOMBRE='H';
@@ -29,7 +29,7 @@ public class Podometro {
     private int caminatasNoche;
 
     /**
-     * Inicializa el podÛmetro con la marca indicada por el par·metro.
+     * Inicializa el pod√≥metro con la marca indicada por el par√°metro.
      * El resto de atributos se ponen a 0 y el sexo, por defecto, es mujer
      */
     public Podometro(String queMarca) {
@@ -55,10 +55,10 @@ public class Podometro {
     }
 
     /**
-     * Simula la configuraciÛn del podÛmetro.
-     * Recibe como par·metros la altura y el sexo de una persona
+     * Simula la configuraci√≥n del pod√≥metro.
+     * Recibe como par√°metros la altura y el sexo de una persona
      * y asigna estos valores a los atributos correspondiente.
-     * Asigna adem·s el valor adecuado al atributo longitudZancada
+     * Asigna adem√°s el valor adecuado al atributo longitudZancada
      * 
      * (leer enunciado)
      *  
@@ -77,15 +77,15 @@ public class Podometro {
     }
 
     /**
-     *  Recibe cuatro par·metros que supondremos correctos:
-     *    pasos - el n∫ de pasos caminados
-     *    dia - n∫ de dÌa de la semana en que se ha hecho la caminata 
-     *              (1 - Lunes, 2 - Martes - .... - 6 - S·bado, 7 - Domingo)
-     *    horaInicio ñ hora de inicio de la caminata
-     *    horaFin ñ hora de fin de la caminata
+     *  Recibe cuatro par√°metros que supondremos correctos:
+     *    pasos - el n¬∫ de pasos caminados
+     *    dia - n¬∫ de d√≠a de la semana en que se ha hecho la caminata 
+     *              (1 - Lunes, 2 - Martes - .... - 6 - S√°bado, 7 - Domingo)
+     *    horaInicio ‚Äì hora de inicio de la caminata
+     *    horaFin ‚Äì hora de fin de la caminata
      *    
-     *    A partir de estos par·metros el mÈtodo debe realizar ciertos c·lculos
-     *    y  actualizar· el podÛmetro adecuadamente  
+     *    A partir de estos par√°metros el m√©todo debe realizar ciertos c√°lculos
+     *    y  actualizar√° el pod√≥metro adecuadamente  
      *   
      *   (leer enunciado del ejercicio)
      */
@@ -128,14 +128,14 @@ public class Podometro {
     }
 
     /**
-     * Muestra en pantalla la configuraciÛn del podÛmetro
+     * Muestra en pantalla la configuraci√≥n del pod√≥metro
      * (altura, sexo y longitud de la zancada)
      * 
      * (ver enunciado)
      *  
      */
     public void printConfiguracion() {
-        System.out.println("ConfiguraciÛn del podÛmetro");
+        System.out.println("Configuraci√≥n del pod√≥metro");
         System.out.println("***************************");
         System.out.println("Altura: "+altura+" mtos");
         System.out.println("Sexo: "+sexo);
@@ -143,32 +143,32 @@ public class Podometro {
     }
 
     /**
-     * Muestra en pantalla informaciÛn acerca de la distancia recorrida,
+     * Muestra en pantalla informaci√≥n acerca de la distancia recorrida,
      * pasos, tiempo total caminado, ....
      * 
      * (leer enunciado)
      *  
      */
-    public void printEstadÌsticas() {
-        System.out.println("EstadÌsticas");
+    public void printEstad√≠sticas() {
+        System.out.println("Estad√≠sticas");
         System.out.println("*************************");
         System.out.println("Distancia recorrida toda la semana: "+totalDistanciaSemana+" Km");
         System.out.println("Distancia recorrida fin de semana: "+totalDistanciaFinSemana+" Km");
         System.out.println();
-        System.out.println("N∫ pasos dÌas laborables: "+totalPasosLaborables);
-        System.out.println("N∫ pasos S¡BADO: "+totalPasosSabado);
-        System.out.println("N∫ pasos DOMINGO: "+totalPasosDomingo);
+        System.out.println("N¬∫ pasos d√≠as laborables: "+totalPasosLaborables);
+        System.out.println("N¬∫ pasos S√ÅBADO: "+totalPasosSabado);
+        System.out.println("N¬∫ pasos DOMINGO: "+totalPasosDomingo);
         System.out.println();
-        System.out.println("N∫ caminatas realizadas a partir de las 21h: "+caminatasNoche);
+        System.out.println("N¬∫ caminatas realizadas a partir de las 21h: "+caminatasNoche);
         System.out.println();
         System.out.println("Tiempo total caminado en la semana: "+tiempo/60+" horas y "+tiempo%60+" minutos");
-        System.out.println("DÌa/s con m·s pasos caminados: "+diaMayorNumeroPasos());
+        System.out.println("D√≠a/s con m√°s pasos caminados: "+diaMayorNumeroPasos());
 
     }
 
     /**
-     *  Calcula y devuelve un String que representa el nombre del dÌa
-     *  en el que se ha caminado m·s pasos - "S¡BADO"   "DOMINGO" o  "LABORABLES"
+     *  Calcula y devuelve un String que representa el nombre del d√≠a
+     *  en el que se ha caminado m√°s pasos - "S√ÅBADO"   "DOMINGO" o  "LABORABLES"
      */
     public String diaMayorNumeroPasos() {
         if(totalPasosLaborables>totalPasosSabado && totalPasosLaborables>totalPasosDomingo)
@@ -177,7 +177,7 @@ public class Podometro {
         }
         else if(totalPasosSabado>totalPasosLaborables && totalPasosSabado>totalPasosDomingo)
         {
-            return "S¡BADO";
+            return "S√ÅBADO";
         }
         else if(totalPasosDomingo>totalPasosLaborables && totalPasosDomingo>totalPasosSabado)
         {
@@ -185,7 +185,7 @@ public class Podometro {
         }
         else if(totalPasosLaborables==totalPasosSabado)
         {
-            return "LABORABLES" + " S¡BADO";
+            return "LABORABLES" + " S√ÅBADO";
         }
         else if(totalPasosLaborables==totalPasosDomingo)
         {
@@ -193,18 +193,18 @@ public class Podometro {
         }
         else if(totalPasosSabado==totalPasosDomingo)
         {
-            return "S¡BADO" + " DOMINGO";
+            return "S√ÅBADO" + " DOMINGO";
         }
         else 
         {
-            return "LABORABLES" + " S¡BADO" + " DOMINGO";
+            return "LABORABLES" + " S√ÅBADO" + " DOMINGO";
         }
     }
 
     /**
-     * Restablecer los valores iniciales del podÛmetro
+     * Restablecer los valores iniciales del pod√≥metro
      * Todos los atributos se ponen a cero salvo el sexo
-     * que se establece a MUJER. La marca no varÌa
+     * que se establece a MUJER. La marca no var√≠a
      *  
      */    
     public void reset() {
