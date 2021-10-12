@@ -45,8 +45,6 @@ public class Podometro {
         tiempo=0;
         caminatasNoche=0;
         
-        
-        
     }
 
 
@@ -73,6 +71,11 @@ public class Podometro {
     {
         altura=queAltura;
         altura=ZANCADA_HOMBRE*altura;
+        
+        if (queAltura == MUJER)
+        {
+            
+        }
     }
 
      /**
