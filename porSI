@@ -65,16 +65,13 @@ public class Podometro
      * 
      * (leer enunciado)
      */
-    // no entiendo porque la altura en cm debe ser double, nadie dice 
-    // tengo 190.5 cm de altura. Incluso todos los datos que se van
-    // a pasar desde la demo son enteros. Supongo que es para obligarnos
-    // a usar las funciones de redondeo.
     public void configurar(double queAltura, char queSexo)
     {
         sexo = queSexo;
         altura = queAltura;
         switch(sexo)
         {
+            // longitudZancada = altura por 0.45, redondeado hacia arriba
             case 'H': longitudZancada = (int)Math.ceil(0.45 * altura);
             break;
             case 'M': longitudZancada = (int)Math.floor(0.41 * altura);
@@ -108,31 +105,36 @@ public class Podometro
         cuantosMinutos += horaFinMinutos - horaInicioMinutos;
         this.tiempo += cuantosMinutos;
         
+        int distancia = pasos * longitudZancada;
+        totalDistaciaSemana += distancia;
         switch(dia)
         {
+            // los dias laborables se pueden poner seguidos
             case 1: case 2: case 3: case 4: case 5:
                 totalPasosLaborables += pasos;
-                totalDistaciaSemana += pasos * longitudZancada; 
             break;
+            // el Sabado
             case 6: 
                 totalPasosSabado += pasos;
-                totalDistanciaFinSemana += pasos * longitudZancada;
+                totalDistanciaFinSemana += distancia;
             break;
+            // el Domingo
             case 7:
                 totalPasosDomingo += pasos;
-                totalDistanciaFinSemana += pasos * longitudZancada;
+                totalDistanciaFinSemana += distancia;
             break;
-            
         }
         
-        
-       
-
+        // los paseos nocturnos
+        if(horaInicioHoras >= 21)
+        {
+            caminatasNoche++;
+        }
     }
     
     public void registrarCaminata2(int pasos, int dia, int horaInicio, int horaFin)
     {
-        
+        //LocalTime
        
 
     }
@@ -145,8 +147,18 @@ public class Podometro
      */
     public void printConfiguracion()
     {
-
-        
+        System.out.println("Configuracion del podometro");
+        System.out.println("***************************");
+        System.out.println("Altura: " + altura);
+        if(sexo == MUJER)
+        {
+            System.out.println("Sexo: MUJER");
+        }
+        else
+        {
+            System.out.println("Sexo: HOMBRE");
+        }
+        System.out.println("Longitud zancada : " + longitudZancada + " mtos");
 
     }
 
@@ -158,10 +170,20 @@ public class Podometro
      */
     public void printEstadísticas()
     {
-
         
-
+        System.out.println("Estadisticas");
+        System.out.println("***************************");
+        System.out.println("Distancia recorrida toda la semana: " + totalDistaciaSemana);
+        System.out.println("Distancia recorrida fin de semana: " + totalDistanciaFinSemana);
+        System.out.println("Nº pasos dias laborables: " + totalPasosLaborables);
+        System.out.println("Nº pasos SABADO: " + totalPasosSabado);
+        System.out.println("Nº pasos DOMINGO: " + totalPasosDomingo);
+        System.out.println("Nº de caminatas realizados a partir de las 21:00: " + caminatasNoche);
+        System.out.println("Tiempo total caminado en la semana: " 
+                          + (tiempo / 60) + "h. y " + (tiempo % 60) + " m." );
+        System.out.println("Dias con mas pasos caminados: " + diaMayorNumeroPasos());
     }
+    
 
     /**
      *  Calcula y devuelve un String que representa el nombre del día
@@ -169,9 +191,35 @@ public class Podometro
      */
     public String diaMayorNumeroPasos()
     {
-
+        String res = "";
+        // primero averiguo cual es el maximo numero de pasos
+        // entre LABORABLES, SABADO Y DOMINGO.
+        int pasosMax = totalPasosLaborables;
+        
+        if(totalPasosSabado > pasosMax)
+        {
+            pasosMax = totalPasosSabado;
+        }
+        if(totalPasosDomingo > pasosMax)
+        {
+            pasosMax = totalPasosDomingo;
+        }
+        
+        // ahora anado a res aquellos que son iguales al maximo
+        if(totalPasosLaborables == pasosMax)
+        {
+            res += " Laborables";
+        }
+        if(totalPasosSabado == pasosMax)
+        {
+            res = res.concat(" Sabado");
+        }
+        if(totalPasosDomingo == pasosMax)
+        {
+            res.concat(" Domingo");
+        }
          
-        return "";
+        return res;
     }
     
     /**
@@ -188,4 +236,3 @@ public class Podometro
     }
 
 }
-

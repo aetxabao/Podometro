@@ -78,8 +78,8 @@ public class DemoPodometro {
 
     private void printMarca() {
         System.out.println("********************************************");
-        System.out.println("*******    Podómetro " + podometro.getMarca().toUpperCase()
-            + "       *******");
+        //System.out.println("*******    Podómetro " + podometro.getMarca().toUpperCase()
+        //    + "       *******");
         System.out.println("********************************************\n");
     }
 
