@@ -68,11 +68,11 @@ public class Podometro {
         sexo = queSexo;
         if(sexo==HOMBRE)
         {
-            longitudZancada = Math.ceil(altura*ZANCADA_HOMBRE*100.0)/100.0;
+            longitudZancada = Math.ceil(altura*ZANCADA_HOMBRE);
         }
         else if(sexo==MUJER)
         {
-            longitudZancada = Math.floor(altura*ZANCADA_MUJER*100.0)/100.0;
+            longitudZancada = Math.floor(altura*ZANCADA_MUJER);
         }
     }
 
@@ -137,9 +137,9 @@ public class Podometro {
     public void printConfiguracion() {
         System.out.println("Configuración del podómetro");
         System.out.println("***************************");
-        System.out.println("Altura: "+altura+" mtos");
+        System.out.println("Altura: "+altura/100+" mtos");
         System.out.println("Sexo: "+sexo);
-        System.out.println("Longitud zancada: "+longitudZancada+" mtos");
+        System.out.println("Longitud zancada: "+longitudZancada/100+" mtos");
     }
 
     /**
@@ -152,8 +152,8 @@ public class Podometro {
     public void printEstadísticas() {
         System.out.println("Estadísticas");
         System.out.println("*************************");
-        System.out.println("Distancia recorrida toda la semana: "+totalDistanciaSemana+" Km");
-        System.out.println("Distancia recorrida fin de semana: "+totalDistanciaFinSemana+" Km");
+        System.out.println("Distancia recorrida toda la semana: "+totalDistanciaSemana/100+" Km");
+        System.out.println("Distancia recorrida fin de semana: "+totalDistanciaFinSemana/100+" Km");
         System.out.println();
         System.out.println("Nº pasos días laborables: "+totalPasosLaborables);
         System.out.println("Nº pasos SÁBADO: "+totalPasosSabado);
