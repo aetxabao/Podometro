@@ -24,7 +24,9 @@ public class DemoPodometro {
      *  Configurar el podómetro y registrar todas las caminatas
      *  
      */
-    public void iniciar() {
+    public void iniciar()
+    {
+        System.out.print("\u000C");
 
         printMarca();
         configurar(157, 'M');
@@ -78,8 +80,8 @@ public class DemoPodometro {
 
     private void printMarca() {
         System.out.println("********************************************");
-        //System.out.println("*******    Podómetro " + podometro.getMarca().toUpperCase()
-        //    + "       *******");
+        System.out.println("*******    Podómetro " + podometro.getMarca().toUpperCase()
+            + "       *******");
         System.out.println("********************************************\n");
     }
 
