@@ -3,28 +3,49 @@
  * acerca de los pasos, distancia, ..... que una persona
  * ha dado en una semana. 
  * 
- * @author    - pon aquí tu nombre - 
+ * @author    - Xabi - 
  */
-public class Podometro {
-    
 
+public class Podometro 
+{
+    private String marca;
+    private String mayorNumeroPasos;
+    private char sexo,mujer,hombre;
+    private double altura;
+    public double longitudZancada;   
+    private int pasos;
+    private int totalCaminado;
+    private int pasosSabado;
+    private int pasosDomingo;
+    private int pasosLaborables;
+    private int pasosFinDeSemana;
     /**
      * Inicializa el podómetro con la marca indicada por el parámetro.
      * El resto de atributos se ponen a 0 y el sexo, por defecto, es mujer
      */
-    public Podometro() {
-
-        
+    public Podometro(String marca) 
+    {
+       mayorNumeroPasos = "0";      
+       sexo = mujer;
+       altura = 0;
+       longitudZancada = 0;
+       pasos = 0;
+       totalCaminado = 0;
+       pasosSabado = 0;
+       pasosDomingo = 0;
+       pasosLaborables = 0;
+       pasosFinDeSemana = 0;
     }
 
     /**
      * accesor para la marca
      *  
      */
-    public      getMarca() {
+    public String getMarca() 
+    {
 
-         
-
+    return  "marca";     
+    
     }
 
     /**
@@ -36,11 +57,21 @@ public class Podometro {
      * (leer enunciado)
      *  
      */
-    public void configurar(double queAltura, char queSexo) {
-
-        
+    public void configurar(double queAltura, char queSexo) 
+    {
+    altura = queAltura; 
+    sexo = queSexo;
+    if(sexo == hombre)
+    {
+        longitudZancada = Math.round(queAltura * 45);
     }
+    else if(sexo == mujer)
+    {
+        longitudZancada = Math.round(queAltura * 41); 
+    }
+    }    
 
+    
      /**
      *  Recibe cuatro parámetros que supondremos correctos:
      *    pasos - el nº de pasos caminados
@@ -54,9 +85,27 @@ public class Podometro {
      *   
      *   (leer enunciado del ejercicio)
      */
-    public void registrarCaminata(int pasos, int dia, int horaInicio,
-                            int horaFin) {
 
+    public void registrarCaminata(int pasos, int dia, int horaInicio,int horaFin) 
+    {
+    switch(dia)
+    
+    {
+        case 1: 
+        break;
+        case 2:
+        break;
+        case 3:
+        break;
+        case 4:
+        break;
+        case 5:
+        break;
+        case 6:
+        break;
+        case 7:
+        break;
+    }
        
 
     }
@@ -68,9 +117,12 @@ public class Podometro {
      * (ver enunciado)
      *  
      */
-    public void printConfiguracion() {
-
-        
+    public void printConfiguracion() 
+    {
+    System.out.println("Configuracion del podometro ");
+    System.out.println("Altura " + altura);
+    System.out.println("Sexo " + sexo);
+    System.out.println("longitudZancada " + longitudZancada);
 
     }
 
@@ -81,24 +133,26 @@ public class Podometro {
      * (leer enunciado)
      *  
      */
-    public void printEstadísticas() {
-
-        
+    public void printEstadísticas() 
+    {
+    System.out.println("Estadisticas " );
+    System.out.println("Pasos Totales Caminados " + totalCaminado);
+    System.out.println("Numero de pasos dias laborables " + pasosLaborables);
+    System.out.println("Numero de pasos el sabado " + pasosSabado);
+    System.out.println("Numero de pasos el Domingo " + pasosDomingo);
+    System.out.println("Numero de pasos fin de semana " + pasosFinDeSemana);
 
     }
-
-   
-
+    
     /**
      *  Calcula y devuelve un String que representa el nombre del día
      *  en el que se ha caminado más pasos - "SÁBADO"   "DOMINGO" o  "LABORABLES"
      */
-    public String diaMayorNumeroPasos() {
-
-         
+    public String diaMayorNumeroPasos()
+    {
+    return mayorNumeroPasos;     
 
     }
-    
     
     /**
      * Restablecer los valores iniciales del podómetro
@@ -106,10 +160,18 @@ public class Podometro {
      * que se establece a MUJER. La marca no varía
      *  
      */    
-    public void reset() {
-
-        
-
+    public void reset()
+    {
+    mayorNumeroPasos = "0";
+    sexo = mujer;
+    longitudZancada = 0;
+    altura = 0;
+    pasos = 0;
+    totalCaminado = 0;
+    pasosSabado = 0;
+    pasosLaborables = 0;
+    pasosDomingo = 0;
+    pasosFinDeSemana = 0;
     }
 
 }
