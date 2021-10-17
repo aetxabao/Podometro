@@ -8,7 +8,6 @@
 public class Podometro 
 {
     // TODO void registrarCaminata intentar hacer con un swith
-    // TODO String diaMayorNumeroPasos()
     private final String HOMBRE="H";
     private final String MUJER="M"; //char''
     private final double ZANCADA_HOMBRE= 0.45;
@@ -23,10 +22,10 @@ public class Podometro
     private int totalPasosLaborales;
     private int totalPasosSabado;
     private int totalPasosDomingo;
-    private double totalDistanciaSemana; //km
-    private double totalDistanciaFinSemana; //km
+    private int totalDistanciaSemana; //km
+    private int totalDistanciaFinSemana; //km
     private int tiempo;
-    private double caminatasNoche;  //a partir de las 21 numero de caminatas dadas.
+    private int caminatasNoche;  //a partir de las 21 numero de caminatas dadas.
     
     
 
@@ -76,11 +75,11 @@ public class Podometro
         sexo=queSexo;                    
         if(queSexo=='M')
         {
-            Math.ceil(longitudZancada =queAltura * ZANCADA_MUJER) ;
+            Math.ceil(longitudZancada =queAltura * ZANCADA_MUJER/100) ;
         }
         else
         {
-            Math.ceil(longitudZancada=queAltura * ZANCADA_HOMBRE);
+            Math.ceil(longitudZancada=queAltura * ZANCADA_HOMBRE/100);
         }
     }
 
@@ -103,23 +102,32 @@ public class Podometro
         int Tiempo;
         Tiempo=horaFin-horaInicio;
         tiempo=Tiempo;
-        if(dia==6)
-        {
-            totalDistanciaFinSemana+=pasos;
-        }
-        if(dia==7)
-        {
-            totalDistanciaFinSemana+=pasos;
-        }
-        else
-        {
-            totalDistanciaSemana+=pasos;
-        }
-        if(horaInicio<21)
+         switch (tiempo)
+         {
+             case 1:
+                 dia=6; 
+                 totalDistanciaFinSemana+=pasos;
+                 totalPasosSabado+=pasos;
+                 break;
+             case 2:
+                 dia=7;
+                 totalDistanciaFinSemana+=pasos;
+                 totalPasosDomingo+=pasos;
+                 break;
+             case 3:
+                 dia=1&2&3&4&5;
+                 totalDistanciaSemana+=pasos;
+                 totalPasosLaborales+=pasos;
+                 break;
+                 
+         }
+        
+        if(horaInicio>=21)
         {
             caminatasNoche++;
         }
-        //TODO      ECHO PERO LO TENGO QU EINTENTAR HACER U¡CON UN SWITCH
+        
+        
     }
     
      /**
@@ -146,31 +154,19 @@ public class Podometro
      * (leer enunciado)
      *  
      */
-    public void printEstadísticas(int dia, int pasos, int pasosSabado, int pasosDomingo, int pasosSemana) 
-    {
+    public void printEstadísticas() 
+    { 
         
-        if(dia==6)
-        {
-            pasos=pasosSabado;
-        }
-        if(dia==7)
-        {
-            pasos=pasosDomingo;
-        }
-        else
-        {
-            pasos=pasosSemana;
-        }
         System.out.println("Estadisticas");
         System.out.println("****************************");
         System.out.println("Distancia recorrida toda la semana: " +totalDistanciaSemana);
         System.out.println("Distancia recorrida fin de semana: " +totalDistanciaFinSemana);
-        System.out.println("Nº pasos dias laborales: " +pasosSemana);
-        System.out.println("Nº pasos Sabado: " +pasosSabado);
-        System.out.println("Nº pasos Domingo: " +pasosDomingo);
+        System.out.println("Nº pasos dias laborales: " +totalPasosLaborales);
+        System.out.println("Nº pasos Sabado: " +totalPasosSabado);
+        System.out.println("Nº pasos Domingo: " +totalPasosDomingo);
         System.out.println("Nº caminatas realizadas a partir de las 21h: " +caminatasNoche); //caminatas echas a partir de una hora
         System.out.println("Tiempo total caminado esta semana: " +tiempo);
-        //System.out.println("Dia/s con mas pasos caminados: " +diaMayorNumeroPasos);       dia q mas se a caminado
+        System.out.println("Dia/s con mas pasos caminados: " +diaMayorNumeroPasos());   
     }
 
    
@@ -181,19 +177,32 @@ public class Podometro
      */
     public String diaMayorNumeroPasos() 
     {
-        if(totalPasosSabado<totalPasosDomingo)
+        String diaMasCaminado;
+        if(totalPasosLaborales>totalPasosSabado && totalPasosLaborales>totalPasosDomingo)
         {
-            return DOMINGO;
+            diaMasCaminado="LABORABLES";
+        }
+        else if(totalPasosSabado>totalPasosLaborales && totalPasosSabado>totalPasosDomingo)
+        {
+            diaMasCaminado="SABADO";
+        }
+        else if(totalPasosDomingo>totalPasosLaborales && totalPasosDomingo>totalPasosSabado)
+        {
+            diaMasCaminado="DOMINGO";
+        }
+        else if(totalPasosSabado==totalPasosDomingo && totalPasosSabado>totalPasosLaborales)
+        {
+            diaMasCaminado="DOMINGO Y SABADO";
+        }
+        else if(totalPasosLaborales==totalPasosDomingo && totalPasosLaborales>totalPasosSabado)
+        {
+            diaMasCaminado="LABORABLES Y DOMINGO";
         }
         else
         {
-            return SABADO;
+            diaMasCaminado="SABADO Y DOMINGO ";
         }
-        //if(totalPasosSabado<totalPasosLaborales)
-        //{
-            //return totalPasosLaborales;
-        //}
-        //TODO no se como se hace
+        return diaMasCaminado;
     }
     
     
@@ -205,13 +214,13 @@ public class Podometro
      */    
     public void reset() 
     {
-     altura=0;
-        int sexo ='M';  
+        altura=0;
+        sexo ='M';  
         longitudZancada=0;
         totalPasosLaborales=0;
         totalPasosSabado=0;
         totalPasosDomingo=0;
-        int totalDistanciaSemana=0;
+        totalDistanciaSemana=0;
         totalDistanciaFinSemana=0;
         tiempo=0;
         caminatasNoche=0;   
