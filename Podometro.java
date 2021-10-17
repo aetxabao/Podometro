@@ -3,7 +3,7 @@
  * acerca de los pasos, distancia, ..... que una persona
  * ha dado en una semana. 
  * 
- * @author    - pon aquí tu nombre - 
+ * @Aitor Amigot    
  */
 public class Podometro {
     private final char HOMBRE = 'H';
