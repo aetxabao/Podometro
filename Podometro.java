@@ -1,5 +1,5 @@
 /**
- * La clase modela un  sencillo podómetro que registra información
+ * La clase modela un sencillo podómetro que registra información
  * acerca de los pasos, distancia, ..... que una persona
  * ha dado en una semana. 
  * 
