@@ -8,22 +8,22 @@
 public class Podometro 
 {
     // TODO void registrarCaminata intentar hacer con un swith
-    private final String HOMBRE="H";
-    private final String MUJER="M"; //char''
+    private final char HOMBRE='H';
+    private final char MUJER='M'; //char''
     private final double ZANCADA_HOMBRE= 0.45;
     private final double ZANCADA_MUJER= 0.4; 
-    private final String SABADO= "6";
-    private final String DOMINGO= "7";
+    private final int SABADO= 6;
+    private final int DOMINGO= 7;
     
     private String marca;
     private double altura;
-    private char sexo='M';
+    private char sexo;
     private double longitudZancada;
     private int totalPasosLaborales;
     private int totalPasosSabado;
     private int totalPasosDomingo;
-    private int totalDistanciaSemana; //km
-    private int totalDistanciaFinSemana; //km
+    private double totalDistanciaSemana; //km
+    private double totalDistanciaFinSemana; //km
     private int tiempo;
     private int caminatasNoche;  //a partir de las 21 numero de caminatas dadas.
     
@@ -37,12 +37,12 @@ public class Podometro
     {
         marca=queMarca;
         altura=0;
-        String sexo ="M";  
+        sexo ='M';  
         longitudZancada=0;
         totalPasosLaborales=0;
         totalPasosSabado=0;
         totalPasosDomingo=0;
-        int totalDistanciaSemana=0;
+        totalDistanciaSemana=0;
         totalDistanciaFinSemana=0;
         tiempo=0;
         caminatasNoche=0;
@@ -73,13 +73,13 @@ public class Podometro
     {
         altura=queAltura;
         sexo=queSexo;                    
-        if(queSexo=='M')
+        if(queSexo==MUJER)
         {
-            Math.ceil(longitudZancada =queAltura * ZANCADA_MUJER/100) ;
+            Math.ceil(longitudZancada =queAltura * ZANCADA_MUJER) ;
         }
         else
         {
-            Math.ceil(longitudZancada=queAltura * ZANCADA_HOMBRE/100);
+            Math.ceil(longitudZancada=queAltura * ZANCADA_HOMBRE);
         }
     }
 
@@ -141,9 +141,9 @@ public class Podometro
     {
         System.out.println("Configuracion del podometro");
         System.out.println("****************************");
-        System.out.println("Altura: " +altura+ "mtos");
+        System.out.println("Altura: " +altura/100+ "mtos");
         System.out.println("Sexo: " +sexo);
-        System.out.println("Longitud de zancada: " +longitudZancada+ "mtos");
+        System.out.println("Longitud de zancada: " +longitudZancada/100+ "mtos");
         
     }
 
@@ -180,27 +180,27 @@ public class Podometro
         String diaMasCaminado;
         if(totalPasosLaborales>totalPasosSabado && totalPasosLaborales>totalPasosDomingo)
         {
-            diaMasCaminado="LABORABLES";
+             diaMasCaminado="LABORABLES";
         }
-        else if(totalPasosSabado>totalPasosLaborales && totalPasosSabado>totalPasosDomingo)
+        
+        if(totalPasosSabado>totalPasosLaborales && totalPasosSabado>totalPasosDomingo)
         {
-            diaMasCaminado="SABADO";
+             diaMasCaminado="SABADO";
         }
-        else if(totalPasosDomingo>totalPasosLaborales && totalPasosDomingo>totalPasosSabado)
+        
+        if(totalPasosDomingo>totalPasosLaborales && totalPasosDomingo>totalPasosSabado)
         {
-            diaMasCaminado="DOMINGO";
+             diaMasCaminado="DOMINGO";
         }
-        else if(totalPasosSabado==totalPasosDomingo && totalPasosSabado>totalPasosLaborales)
+        
+        if(totalPasosLaborales==totalPasosDomingo && totalPasosLaborales>totalPasosSabado)
         {
-            diaMasCaminado="DOMINGO Y SABADO";
+             diaMasCaminado="LABORABLES Y DOMINGO";
         }
-        else if(totalPasosLaborales==totalPasosDomingo && totalPasosLaborales>totalPasosSabado)
-        {
-            diaMasCaminado="LABORABLES Y DOMINGO";
-        }
+        
         else
         {
-            diaMasCaminado="SABADO Y DOMINGO ";
+             diaMasCaminado="SABADO Y DOMINGO ";
         }
         return diaMasCaminado;
     }
