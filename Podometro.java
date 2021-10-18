@@ -10,7 +10,7 @@ public class Podometro
 {
     private String marca;
     private String mayorNumeroPasos;
-    private char sexo,mujer,hombre;
+    private char sexo,mujer,m,hombre,h;
     private double altura;
     public double longitudZancada;   
     private int pasos;
@@ -27,6 +27,8 @@ public class Podometro
     {
        mayorNumeroPasos = "0";      
        sexo = mujer;
+       mujer = m;
+       hombre = h;
        altura = 0;
        longitudZancada = 0;
        pasos = 0;
@@ -61,13 +63,13 @@ public class Podometro
     {
     altura = queAltura; 
     sexo = queSexo;
-    if(sexo == hombre)
+    if(queSexo == h)
     {
-        longitudZancada = Math.round(queAltura * 45);
+        longitudZancada = Math.ceil (altura *= 45);
     }
-    else if(sexo == mujer)
+    else if(sexo == m)
     {
-        longitudZancada = Math.round(queAltura * 41); 
+        longitudZancada = (Math.floor(queAltura * 41)); 
     }
     }    
 
@@ -88,26 +90,27 @@ public class Podometro
 
     public void registrarCaminata(int pasos, int dia, int horaInicio,int horaFin) 
     {
+        
     switch(dia)
     
     {
-        case 1: 
+        case 1: String dia1 = "lunes"; 
         break;
-        case 2:
+        case 2: String dia2 = "martes";
         break;
-        case 3:
+        case 3: String dia3 = "miercoles";
         break;
-        case 4:
+        case 4: String dia4 = "jueves";
         break;
-        case 5:
+        case 5: String dia5 = "viernes";
         break;
-        case 6:
+        case 6: String dia6 = "sabado";
         break;
-        case 7:
+        case 7: String dia7 = "domingo";
         break;
     }
-       
-
+    
+    
     }
     
      /**
@@ -120,9 +123,9 @@ public class Podometro
     public void printConfiguracion() 
     {
     System.out.println("Configuracion del podometro ");
-    System.out.println("Altura " + altura);
-    System.out.println("Sexo " + sexo);
-    System.out.println("longitudZancada " + longitudZancada);
+    System.out.println("Altura: " + altura);
+    System.out.println("Sexo: " + sexo);
+    System.out.println("longitudZancada: " + longitudZancada);
 
     }
 
@@ -136,11 +139,11 @@ public class Podometro
     public void printEstadísticas() 
     {
     System.out.println("Estadisticas " );
-    System.out.println("Pasos Totales Caminados " + totalCaminado);
-    System.out.println("Numero de pasos dias laborables " + pasosLaborables);
-    System.out.println("Numero de pasos el sabado " + pasosSabado);
-    System.out.println("Numero de pasos el Domingo " + pasosDomingo);
-    System.out.println("Numero de pasos fin de semana " + pasosFinDeSemana);
+    System.out.println("Pasos Totales Caminados: " + totalCaminado);
+    System.out.println("Numero de pasos dias laborables: " + pasosLaborables);
+    System.out.println("Numero de pasos el sabado: " + pasosSabado);
+    System.out.println("Numero de pasos el Domingo: " + pasosDomingo);
+    System.out.println("Numero de pasos fin de semana: " + pasosFinDeSemana);
 
     }
     
