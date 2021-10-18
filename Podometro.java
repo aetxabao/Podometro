@@ -166,10 +166,8 @@ public class Podometro {
         System.out.println("Nº caminatas realizadas a partir de las 21h : " + caminatasNoche);
         System.out.println("#################");
         System.out.println("Tiempo total caminado en la semana: " + tiempo);
-        System.out.println("Dia/s con mas pasos caminados: " + diaMayorNumeroPasos);
+        System.out.println("Dia/s con mas pasos caminados: " + this.masPasos);
     }
-
-   
 
     /**
      *  Calcula y devuelve un String que representa el nombre del día
@@ -177,31 +175,32 @@ public class Podometro {
      */
     public String diaMayorNumeroPasos() 
     {
-        String diaMaximo = "";
+        String masPasos = "";
         if (totalPasosSabado > totalPasosLaborables && totalPasosSabado > totalPasosDomingo)
         {
-            return  "Sabado";
+            masPasos = "Sabado";
         }
         else if(totalPasosDomingo > totalPasosLaborables && totalPasosDomingo > totalPasosSabado)
         {
-            return "Domingo";
+            masPasos = "Domingo";
         }
         else if(totalPasosLaborables > totalPasosDomingo && totalPasosLaborables > totalPasosSabado)
         {
-            return "Laborables";
+            masPasos = "Laborables";
         }
         else if(totalPasosDomingo == totalPasosLaborables && totalPasosDomingo > totalPasosSabado)
         {
-            return "Domingo y laborales";
+            masPasos = "Domingo y laborales";
         }
         else if(totalPasosDomingo == totalPasosSabado && totalPasosDomingo > totalPasosLaborables)
         {
-            return "Sabado y Domingo";
+            masPasos = "Sabado y Domingo";
         }
         else if(totalPasosSabado == totalPasosLaborables && totalPasosSabado > totalPasosDomingo)
         {
-            return "Sabado y laborales";
+            masPasos = "Sabado y laborales";
         }
+        return masPasos;
     }
     
     
