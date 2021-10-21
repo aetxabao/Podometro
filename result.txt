@@ -1,0 +1,127 @@
+********************************************
+*******    Pod�metro SMARTWALK       *******
+********************************************
+
+Configuraci�n del pod�metro
+*********************************
+Altura: 1.57 mtos
+Sexo: MUJER
+Longitud zancada: 0.64 mtos
+
+
+Estad�sticas
+*********************************
+Distancia recorrida toda la semana: 48.1152 Km
+Distancia recorrida fin de semana: 20.48 Km
+
+
+N� pasos d�as laborables: 43180
+N� pasos S�BADO: 17000
+N� pasos DOMINGO: 15000
+
+
+N� caminatas realizadas a partir de las 21h.: 3
+
+
+Tiempo total caminado en la semana: 11h. y 48m.
+D�a/s con m�s pasos caminados: LABORALES
+D�a/s con m�s pasos caminados: LABORALES
+
+Pulse <Intro> para continuar
+ 
+
+
+********************************************
+*******    Pod�metro SMARTWALK       *******
+********************************************
+
+Configuraci�n del pod�metro
+*********************************
+Altura: 1.85 mtos
+Sexo: HOMBRE
+Longitud zancada: 0.84 mtos
+
+
+Estad�sticas
+*********************************
+Distancia recorrida toda la semana: 16.665599999999998 Km
+Distancia recorrida fin de semana: 5.04 Km
+
+
+N� pasos d�as laborables: 13840
+N� pasos S�BADO: 0
+N� pasos DOMINGO: 6000
+
+
+N� caminatas realizadas a partir de las 21h.: 2
+
+
+Tiempo total caminado en la semana: 6h. y 35m.
+D�a/s con m�s pasos caminados: LABORALES
+D�a/s con m�s pasos caminados: LABORALES
+
+Pulse <Intro> para continuar
+
+
+
+********************************************
+*******    Pod�metro SMARTWALK       *******
+********************************************
+
+Configuraci�n del pod�metro
+*********************************
+Altura: 1.65 mtos
+Sexo: MUJER
+Longitud zancada: 0.67 mtos
+
+
+Estad�sticas
+*********************************
+Distancia recorrida toda la semana: 5.1255 Km
+Distancia recorrida fin de semana: 3.1155 Km
+
+
+N� pasos d�as laborables: 3000
+N� pasos S�BADO: 1650
+N� pasos DOMINGO: 3000
+
+
+N� caminatas realizadas a partir de las 21h.: 2
+
+
+Tiempo total caminado en la semana: 5h. y 30m.
+D�a/s con m�s pasos caminados: LABORALES DOMINGO
+D�a/s con m�s pasos caminados: LABORALES DOMINGO
+
+Pulse <Intro> para continuar
+
+
+
+********************************************
+*******    Pod�metro SMARTWALK       *******
+********************************************
+
+Configuraci�n del pod�metro
+*********************************
+Altura: 1.9 mtos
+Sexo: HOMBRE
+Longitud zancada: 0.86 mtos
+
+
+Estad�sticas
+*********************************
+Distancia recorrida toda la semana: 5.16 Km
+Distancia recorrida fin de semana: 3.44 Km
+
+
+N� pasos d�as laborables: 2000
+N� pasos S�BADO: 2000
+N� pasos DOMINGO: 2000
+
+
+N� caminatas realizadas a partir de las 21h.: 0
+
+
+Tiempo total caminado en la semana: 4h. y 45m.
+D�a/s con m�s pasos caminados: LABORALES SABADO DOMINGO
+D�a/s con m�s pasos caminados: LABORALES SABADO DOMINGO
